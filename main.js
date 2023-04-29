@@ -1,3 +1,13 @@
+/*initial data requirements*/
+
+var outline_pajaro = Table; //load from assets, shapefile of area
+var water = FeatureCollection(); //given training inputs for water
+var vegetation = FeatureCollection(); //given training inputs for vegetation
+var buildings = FeatureCollection(); //given training inputs for buildings
+var fields = FeatureCollection(); //given training inputs for agri field
+var cloud = FeatureCollection(); //given training inputs for cloud, cloud mask
+
+
 //Load Sentinel-2 data and filter by date and area of interest
 var s2 = ee.ImageCollection('COPERNICUS/S2_SR')
     .filterBounds(outline_pajaro)
@@ -45,8 +55,6 @@ Map.addLayer(
 
 var ndwi = s2_old.median().normalizedDifference(['B3', 'B8']);
 Map.addLayer(ndwi, {min: -1, max: 1, palette: ['black', 'blue']}, 'NDWI');
-
-
 
 
 /*----------TRAINING THE CLASSIFER---------*/
