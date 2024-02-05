@@ -1,4 +1,4 @@
-# flood-detection-ml-remotesensing
+# Flood detection using GIS and remote sesning techniques
 Detecting inundation area using Sentinal 2 multispectral images in GEE platform. Demonstration of Support Vector Machine based classification approach for detecting inundation area in Pajaro valley, california.
 
 Poster based on the repository:
